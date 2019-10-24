@@ -28,7 +28,6 @@ load()
 @app.route("/predict", methods=["POST"])
 def predict():
     # initialize the data dictionary that will be returned from the
-    # view
     data = {"success":"Unknown"}
 
     if flask.request.method == "POST":
@@ -55,14 +54,12 @@ def predict():
                 status="url render failed"
             data["status"] = status
 
-    # return the data dictionary as a JSON response
+
     return flask.jsonify(data)
 
 
 @app.route("/", methods=["POST", "GET"])
 def home():
-    # initialize the data dictionary that will be returned from the
-    # view
     data = {"status":" Unknown"}
 
     if request.method == "GET":
@@ -103,15 +100,14 @@ def home():
                 status="url render failed"
             data["status"] = status
 
-    # return the data dictionary as a JSON response
+
     return flask.jsonify(data)
 
 
 if __name__ == "__main__":
     print(
         (
-            "* Loading Keras model and Flask starting server..."
-            "please wait until server has fully started"
+            "Please wait while server loading.."
         )
     )
 
