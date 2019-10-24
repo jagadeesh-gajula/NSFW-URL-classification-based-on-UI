@@ -5,7 +5,7 @@ __Technologies__
 
 - Keras (Tensorflow)
 - Flask
-- Can be deployed to Heroku
+- Actually developed for Heroku deployment.
 - Uses RENDERTRON headless browser service for image extraction.
 
 __Model__
