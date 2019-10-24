@@ -8,16 +8,17 @@ import flask
 from flask import request
 import requests
 from keras.preprocessing import image
+import os
 model=None
 
 
 app = flask.Flask(__name__)
-
+location=os.path.abspath('nsfw.h5')
 
 
 def load():
     global model
-    model = load_model(filepath='nsfw.h5')
+    model = load_model(location)
     model.compile(optimizer = 'adam', loss = 'binary_crossentropy', metrics = ['accuracy'])
 
 load()
